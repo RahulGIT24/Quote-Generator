@@ -69,3 +69,13 @@ main {
     color: black;
     font-weight: bold;
 }
+
+#spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spinner img{
+    height: 207px;
+}

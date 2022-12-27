@@ -11,9 +11,15 @@ fetch("https://quotes15.p.rapidapi.com/quotes/random/", options)
   .then((response) => {
     quote.innerHTML = response.content;
     author.innerHTML = `- ${response.originator.name}`;
+    document.getElementById("spinner").style.display = "none";
     console.log(response);
   })
-  .catch((err) => console.error(err));
+  .catch((err) => {
+    quote.innerHTML =
+      "Unable to fetch quote. <br> <b>Please check your internet connection!!</b>";
+    document.getElementById("spinner").style.display = "none";
+    console.error(err);
+  });
 
 refresh.addEventListener("click", () => {
   location.reload();
